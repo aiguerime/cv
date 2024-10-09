@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 20px 0;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cv-container {
+            width: 210mm; /* A4 width */
+            height: 297mm; /* A4 height */
+            padding: 20mm; /* Maintain proper A4 margins */
+            background: linear-gradient(135deg, #ffffff 60%, #f0f4f8 40%);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .decorative-shape {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: #4A90E2;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 15mm;
+            background: linear-gradient(to right, #4A90E2, #34495E);
+            color: white;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            position: relative;
+        }
+
+        .header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            object-fit: cover; /* Ensures the image fills the space while maintaining aspect ratio */
+        }
+
+        .header-info {
+            flex-grow: 1;
+            padding-left: 20px;
+        }
+
+        .header-info h1 {
+            font-size: 26pt;
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .header-info h2 {
+            font-size: 16pt;
+            font-style: italic;
+            margin: 5px 0 0 0;
+            color: #e0e0e0;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 10pt;
+        }
+
+        .contact-info p {
+            margin: 2px 0;
+            color: #ffffff;
+        }
+
+        .main {
+            display: flex;
+            flex-grow: 1;
+            margin-top: 20px;
+        }
+
+        .sidebar {
+            width: 30%;
+            padding-right: 15px;
+            border-right: 2px dashed #4A90E2;
+        }
+
+        .main-content {
+            width: 70%;
+            padding-left: 20px;
+        }
+
+        .section {
+            margin-bottom: 15mm;
+        }
+
+        h3 {
+            color: #4A90E2;
+            font-size: 16pt;
+            margin-bottom: 8mm;
+            border-bottom: 2px solid #4A90E2;
+            padding-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        p, ul {
+            font-size: 11pt;
+            margin: 0;
+            color: #333;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 5mm;
+            position: relative;
+        }
+
+        .progress-bar-inner {
+            height: 12px;
+            background-color: #4A90E2;
+            width: 75%;
+            position: relative;
+            transition: width 0.5s ease-in-out;
+        }
+
+        .progress-bar-inner:hover {
+            width: 100%;
+        }
+
+        .main-content .experience-item {
+            border-left: 4px solid #4A90E2;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .experience-item h4 {
+            font-size: 14pt;
+            margin: 0;
+        }
+
+        .experience-item p {
+            font-size: 11pt;
+            margin: 5px 0 0 0;
+        }
+
+        .footer {
+            border-top: 2px dashed #4A90E2;
+            text-align: center;
+            padding-top: 10mm;
+            font-size: 9pt;
+            color: #999;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                width: 210mm;
+                height: 297mm;
+                padding: 15mm; /* Adjust padding for print */
+                page-break-inside: avoid;
+                background: none;
+            }
+
+            .decorative-shape {
+                display: none;
+            }
+
+            .main-content, .sidebar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="decorative-shape"></div>
+        <div class="header">
+            <img src="photo.jpeg" alt="Your Photo">
+            <div class="header-info">
+                <h1>Ivan Gorynin</h1>
+                <h2>Senior Software Engineer</h2>
+            </div>
+            <div class="contact-info">
+                <p>Email: igorynin@icloud.com</p>
+                <p>Phone: +33 7 69 61 42 99</p>
+                <p>linkedin.com/in/ivan-gorynin</p>
+                <p>27 Rue des Amiraux</p>
+                <p>75018 Paris, France</p>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="sidebar">
+                <div class="section">
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>Quantitative Finance</li>
+                        <li>C++ Programming (C++11, C++17, C++20)</li>
+                        <li>Python/VBA Scripting</li>
+                        <li>Pricing Models</li>
+                        <li>FICC Instruments</li>
+                        <li>Linear Rates Products</li>
+                        <li>Non-Linear Rates Products</li>
+                        <li>Stochastic Volatility Models</li>
+                        <li>Bachelier Model</li>
+                        <li>Leadership</li>
+                        <li>Communication</li>
+                        <li>Mentoring</li>
+                        <li>Git/Perfroce Version Control</li>
+                    </ul>
+                    
+                </div>
+                <div class="section">
+                    <h3>Education</h3>
+                    
+                    <h4> Paris-Saclay <img src="sacl.png" alt="Paris-Saclay" style="width: 70px; vertical-align: middle;">  </h4>
+                    <p><strong>Degree:</strong> PhD  </p>
+                    <p><strong>Duration:</strong> Oct 2014-Dec 2017</p>
+                    <p><strong>Research Focus:</strong> Non-linear signal processing and time series modelling.</p>
+                    <p><strong>Location:</strong> Evry, France</p>
+                    <br>
+                    <h4> Telecom SudParis <img src="tlcom_sudparis_logo.jpeg" alt="Telecom SudParis" style="width: 30px; vertical-align: middle;">  </h4>
+                    <p><strong>Degree:</strong> Master's Degree in Mathematics and Informatics</p>
+                    <p><strong>Duration:</strong> Oct 2011-Oct 2014</p>
+                    <p><strong>Specialization:</strong> Probabilistic and statistical modeling</p>
+                    <p><strong>Location:</strong> Evry, France</p>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="section">
+                    <h3>Professional Summary</h3>
+                    <p>With a PhD in mathematics and extensive experience as a Senior Software Engineer, I bring a unique blend of technical expertise and problem-solving skills, particularly suited to developing solutions for computation-intensive financial applications. My strong proficiency in C++ (including modern standards) and Python enables me to design, implement, and optimize models to meet the evolving demands of the finance industry</p>
+                </div>
+
+                <div class="section">
+                    <h3>Experience</h3>
+                    <div class="experience-item">
+                        <h4>Murex <img src="murex_logo.jpeg" alt="Murex" style="width: 30px; vertical-align: middle;"> </h4>
+                        <p><strong>Position:</strong> Senior Software Engineer</p>
+                        <p><strong>Duration:</strong> Oct 2019 – Present (5 years, 1 month)</p>
+                        <p><strong>Specialization:</strong> Curve Analytics, C/C++.</p>
+                        <ul></ul>
+                            <li>Developed advanced interpolation methods to accommodate IFR jumps, addressing quant needs.</li>
+                            <li>Designed a robust framework for computing cross-effects in rate curves.</li>
+                            <li>Created a flexible calibration framework for forward smooth curves, tailored to quant requirements.</li>
+                            <li>Supervised 5 interns and 1 apprentice</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <h4>Murex <img src="murex_logo.jpeg" alt="Murex" style="width: 30px; vertical-align: middle;"> </h4>
+                        <p><strong>Position:</strong> Software Engineer</p>
+                        <p><strong>Duration:</strong> Feb 2018 – Oct 2019 (1 year, 9 months)</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Languages</h3>
+                    <p>English, French, Russian</p>
+                </div>
+
+                <div class="section"></div>
+                    <h3>Outside Interests</h3>
+                    <p>Soft skills, Communication Techniques, Dancing, Yoga, Tennis</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
